@@ -5,6 +5,10 @@
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
+  
+}
+.body {
+  color: #7BA9A9;
 }
 
 .description {
