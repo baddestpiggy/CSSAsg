@@ -1,15 +1,12 @@
-import Navbar from "./ui/Navbar"
+import Navbar from "./ui/Navbar";
+import "./globals.css";
 
-export default function App() {
-
-  return (
+export default function RootLayout({ children }) {
+ return (
     <html lang="en">
       <body>
-        <Navbar></Navbar>
-      </body>
+        <Navbar />
+        {children}</body>
     </html>
-    
-
   )
 }
-
