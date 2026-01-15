@@ -56,7 +56,20 @@ export default function Gallery() {
         </div>
         
       </div>
-      
+      <div className={gallery.gallerycontainer}>
+
+        <div className={gallery.gallerytrack2}>
+          {/* Render images twice for infinite loop */}
+          {[...images2, ...images2].map((img, index) => (
+            <img
+              key={index}
+              src={img.src}
+              alt={img.alt}
+              className={gallery.galleryimage}
+            />
+          ))}
+        </div>
+      </div>
       
 
       
@@ -74,20 +87,7 @@ export default function Gallery() {
       </section>
 
 
-      <div className={gallery.gallerycontainer}>
-
-        <div className={gallery.gallerytrack2}>
-          {/* Render images twice for infinite loop */}
-          {[...images2, ...images2].map((img, index) => (
-            <img
-              key={index}
-              src={img.src}
-              alt={img.alt}
-              className={gallery.galleryimage}
-            />
-          ))}
-        </div>
-      </div>
+      
       
     </>
   );
