@@ -23,7 +23,9 @@ export default function Gallery() {
   return (
     <>
 
-      <h1 className={gallery.h1}>GALLERY</h1>
+      <div>
+        <h2></h2>
+      </div>
       <div className={gallery.gallerycontainer}>
         <div className={gallery.gallerytrack}>
           {/* Render images twice for infinite loop */}
@@ -36,6 +38,13 @@ export default function Gallery() {
             />
           ))}
         </div>
+      </div>
+      
+      <h1 className={gallery.h1}>GALLERY</h1>
+
+      <div className={gallery.gridcontainer}>
+          <img className={gallery.gridimg} src='/wall_of_china_2.jpg' />
+          <img className={gallery.gridimg} src='/wall_of_china_1.jpg' />
       </div>
     </>
   );

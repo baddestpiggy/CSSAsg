@@ -44,7 +44,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%); /* Move half-way (since content is duplicated) */
+    transform: translateX(-100%); /* Move half-way (since content is duplicated) */
   }
 }
 
@@ -69,4 +69,18 @@
   background-color:#cdcdcd;
   color:rgb(0, 0, 0);
   font-family:'Times New Roman', Times, serif;
+}
+
+.gridcontainer{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 50px;
+}
+.gridimg {
+  width: 100%; /* Fill grid cell */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crop to fit */
+  max-width: 500px;
+  max-height: 700px;
 }
