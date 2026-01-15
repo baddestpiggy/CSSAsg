@@ -7,8 +7,11 @@
   min-height: 100vh;
   
 }
+.div {
+  background-color: #7BA9A9;
+}
 .body {
-  color: #7BA9A9;
+  background-color: #7BA9A9;
 }
 
 .description {
