@@ -144,7 +144,7 @@ export default function FactsPage() {
       </div>
 
       <footer className={styles.footer}>
-        <p>© 2024 World History Project</p>
+        <p>© 2026 CSS uwu Project</p>
       </footer>
     </div>
   );
