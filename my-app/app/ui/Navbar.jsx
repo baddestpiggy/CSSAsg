@@ -7,7 +7,7 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <Link className={styles.navitem} href="/">Home</Link>
             <Link className={styles.navitem} href="/gallery">Gallery</Link>
-            <Link className={styles.navitem} href="/Quiz">Quiz</Link>
+            
             
             <div class={styles.dropdown}>
                 <p class={styles.dropbtn}>Facts</p>
