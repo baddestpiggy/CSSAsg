@@ -4,7 +4,18 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styles from './page.module.css';
 
+
 export default function HomePage() {
+  const [visitedWonders, setVisitedWonders] = useState([]);
+
+  useEffect(() => {
+    // Load visited wonders from localStorage
+    const stored = localStorage.getItem('visitedWonders');
+    if (stored) {
+      setVisitedWonders(JSON.parse(stored));
+    }
+  }, []);
+
   const facts = [
     {
       slug: "Wall",
@@ -120,22 +131,67 @@ export default function HomePage() {
     }
   ];
 
+  const progressPercentage = (visitedWonders.length / facts.length) * 100;
+
   return (
     <div className={styles.container}>
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.titleBox}>
-            <h1 className={styles.title}>THE SEVEN WONDERS OF THE WORLD</h1>
+            <h1 className={styles.title}>THE SEVEN WONDERS OF DIDDY</h1>
           </div>
           <p className={styles.subtitle}>
-            Discover the remarkable stories behind the Seven Wonders
+            Discover the remarkable stories behind the Epstien Island
           </p>
         </div>
       </div>
 
+      {/* Progress Tracker */}
+      <div className={styles.progressTracker}>
+        <div className={styles.progressHeader}>
+          <h3 className={styles.progressTitle}>🗺️ Your Exploration Progress</h3>
+          <span className={styles.progressCount}>
+            {visitedWonders.length} / {facts.length} Wonders Explored
+          </span>
+        </div>
+        <div className={styles.wondersImageGrid}>
+          {facts.map((fact) => (
+            <div 
+              key={fact.slug}
+              className={`${styles.wonderImageItem} ${visitedWonders.includes(fact.slug) ? styles.revealed : ''}`}
+            >
+              <div className={styles.wonderImageWrapper}>
+                <img
+                  src={fact.images[0]}
+                  alt={fact.title}
+                  className={styles.wonderImage}
+                />
+                {!visitedWonders.includes(fact.slug) && (
+                  <div className={styles.blackOverlay}>
+                    <span className={styles.questionMark}>?</span>
+                  </div>
+                )}
+              </div>
+              <p className={styles.wonderImageTitle}>{fact.title}</p>
+            </div>
+          ))}
+        </div>
+        {visitedWonders.length === facts.length && (
+          <div className={styles.completionMessage}>
+            🎉 Congratulations! You've explored all Seven Wonders! 🏆
+          </div>
+        )}
+      </div>
+
+      
+
       <div className={styles.factsGrid}>
         {facts.map((fact, index) => (
-          <FactCard key={index} fact={fact} />
+          <FactCard 
+            key={index} 
+            fact={fact}
+            isVisited={visitedWonders.includes(fact.slug)}
+          />
         ))}
       </div>
 
@@ -158,7 +214,7 @@ export default function HomePage() {
   );
 }
 
-function FactCard({ fact }) {
+function FactCard({ fact, isVisited }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -172,7 +228,12 @@ function FactCard({ fact }) {
   }, [fact.images.length]);
 
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card} ${isVisited ? styles.visitedCard : ''}`}>
+      {isVisited && (
+        <div className={styles.visitedBadge}>
+          ✓ Explored
+        </div>
+      )}
       <div className={styles.imageContainer}>
         {fact.images.map((image, idx) => (
           <div
@@ -195,7 +256,9 @@ function FactCard({ fact }) {
         <div className={styles.descriptionBox}>
           <p className={styles.description}>{fact.description}</p>
           <Link href={`/facts/${fact.slug}`}>
-            <button className={styles.learnMoreButton}>Learn More</button>
+            <button className={styles.learnMoreButton}>
+              {isVisited ? 'Visit Again' : 'Learn More'}
+            </button>
           </Link>
         </div>
         <div className={styles.detailsBox}>
