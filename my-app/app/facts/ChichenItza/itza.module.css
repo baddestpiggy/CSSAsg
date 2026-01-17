@@ -1,0 +1,50 @@
+/* app/facts/Christ/christ.module.css */
+.container {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.title {
+  font-size: 3rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #eee;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 700px;
+  height: 400px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto 30px auto;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper img {
+  object-fit: cover;
+  object-position: top;
+}
+
+.factList {
+  line-height: 1.8;
+  list-style: none;
+  padding: 0;
+}
+
+.backButton {
+  margin-top: 40px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  transition: background 0.3s;
+}
+
+.backButton:hover {
+  background-color: #f0f0f0;
+}
