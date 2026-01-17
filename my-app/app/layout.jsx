@@ -14,10 +14,11 @@ const playfair = Playfair_Display({
 export default function RootLayout({children}) {
   return (
     <html lang="en">
-      <body className={playfair.className}  >
-        <Navbar></Navbar>
+      <body className={playfair.className}>
+        <Navbar ></Navbar>
         {children}
       </body>
+      
     </html>
   );
 }
