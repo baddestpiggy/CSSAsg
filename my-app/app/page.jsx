@@ -69,7 +69,7 @@ export default function HomePage() {
       slug: "ChichenItza",
       images: [
         "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80",
-        "https://images.unsplash.com/photo-1569257334859-8f6b3c5b8e68?w=800&q=80",
+        "https://playacar.palaceresorts.com/tour-chichen-itza-playacar-palace_16260b8779.webp",
         "https://www.thepkpway.com/wp-content/uploads/2016/07/chichen-itza-playa-del-carmen-cancun-mexico-3a.jpg"
       ],
       title: "Chichén Itzá",
