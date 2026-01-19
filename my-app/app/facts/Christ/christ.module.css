@@ -1,50 +1,101 @@
-/* app/facts/Christ/christ.module.css */
-.container {
-  padding: 40px;
-  max-width: 800px;
-  margin: 0 auto;
-  font-family: sans-serif;
+.backgroundContainer
+{
+    background-color: #f5f1e8;
+    min-height: 100vh
 }
 
-.title {
-  font-size: 3rem;
-  color: #2c3e50;
-  border-bottom: 2px solid #eee;
+.hero h1
+{
+    background: linear-gradient(to bottom, #e8dcc8, #f5f1e8); /* Warm cream gradient */
+    text-align: center;
+    margin-top: 0;
+    padding-top: 20px;
 }
 
-.imageWrapper {
-  width: 100%;
-  max-width: 700px;
-  height: 400px;
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 0 auto 30px auto;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.factBar 
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent cream */
+    padding: 20px;
+    border-top: 1px solid #d4c4a8;
+    border-bottom: 1px solid #d4c4a8;
+    width: 100%;
+    margin: 0;
 }
 
-.imageWrapper img {
-  object-fit: cover;
-  object-position: top;
+.factItem
+{
+    display: flex;
+    align-items: flex-start;
+    gap: 12px; /* Space between icon and text */
 }
 
-.factList {
-  line-height: 1.8;
-  list-style: none;
-  padding: 0;
+.icon 
+{
+    width: 24px;  /* Adjust size to match your image */
+    height: auto;
 }
 
-.backButton {
-  margin-top: 40px;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: white;
-  transition: background 0.3s;
+.label
+{
+    display: block;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #4a3728; /* Dark brown text */
 }
 
-.backButton:hover {
-  background-color: #f0f0f0;
+.value 
+{
+    margin: 0;
+    font-size: 1rem;
+    color: #6b5a45;
+}
+
+/* The vertical line between facts */
+.divider 
+{
+    width: 1px;
+    height: 40px;
+    background-color: #d4c4a8;
+}
+
+.photo
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%; 
+}
+
+.factsGrid 
+{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Text gets more space than the map */
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mapContainer 
+{
+    position: relative;
+    padding: 10px;
+}
+
+.mapLabel 
+{
+    background: #5d4a37;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    font-family: serif;
+}
+
+.mapImage
+{
+    width: 100%;
+    height:100%;
 }

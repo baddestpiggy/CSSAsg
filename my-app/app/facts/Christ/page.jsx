@@ -1,42 +1,84 @@
-"use client";
+import styles from "./christ.module.css"
 
-import React from "react";
-import Image from "next/image";
-import styles from "./christ.module.css";
-
-export default function Christ() {
-    const wonderData = {
-        name: "Christ the Redeemer",
-        location: "Rio de Janeiro, Brazil",
-        height: "30 meters (98 feet)",
-        completed: "1931",
-        fact: "The Statue's arms stretch 28 meters (92 feet) wide, making it one of the largest Art Deco statues in the world.",
-        description:
-            "Christ the Redeemer is an iconic statue of Jesus Christ located atop the Corcovado Mountain in Rio de Janeiro, Brazil. It stands 30 meters tall and has become a symbol of Christianity around the world. The statue was completed in 1931 and is made of reinforced concrete and soapstone. It offers panoramic views of the city and is a popular tourist destination.",
-        imageSrc: "/christ_the_redeemer_1.jpg",
-    };
+export default function ChristTheRedeemer() {
     return (
-      <main className={styles.container}>
-        <div className={styles.imageWrapper}>
-          <Image
-            src={wonderData.imageSrc}
-            alt={wonderData.name}
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        </div>
-        <h1 className={styles.title}>{wonderData.name}</h1>
+        <main className={styles.backgroundContainer}>
 
-        <section>
-          <h3>Quick Facts</h3>
-        <ul className={styles.infoList}>
-          <li><strong>Location:</strong> {wonderData.location}</li>
-          <li><strong>Height:</strong> {wonderData.height}</li>
-          <li><strong>Completed:</strong> {wonderData.completed}</li>
-          <li><strong>Interesting Fact:</strong> {wonderData.fact}</li>
-        </ul>
-        </section>
-        <p className={styles.description}>{wonderData.description}</p>
-      </main>
+            <section className={styles.hero}>
+                <h1>Christ the Redeemer</h1>
+            </section>
+
+            <div className={styles.factBar}>
+                <div className={styles.factItem}>
+                    <img src="/location.png" alt="Location" className={styles.icon} />
+                    <div>
+                        <span className={styles.label}>Location:</span>
+                        <p className={styles.value}>Rio de Janeiro, Brazil</p>
+                    </div>
+                </div>
+
+                <div className={styles.divider}></div>
+
+                <div className={styles.factItem}>
+                    <img src="/calender.png" alt="Built" className={styles.icon} />
+                    <div>
+                        <span className={styles.label}>Built:</span>
+                        <p className={styles.value}>1922 - 1931</p>
+                    </div>
+                </div>
+            
+                <div className={styles.divider}></div>
+
+                <div className={styles.factItem}>
+                    <img src="/material.png" alt="Materials" className={styles.icon} />
+                    <div>
+                        <span className={styles.label}>Materials:</span>
+                        <p className={styles.value}>Reinforced Concrete & Soapstone</p>
+                    </div>
+                </div>
+
+                <div className={styles.divider}></div>
+
+                <div className={styles.factItem}>
+                    <img src="/length.png" alt="Height" className={styles.icon} />
+                    <div>
+                        <span className={styles.label}>Height:</span>
+                        <p className={styles.value}>30 Meters (98 ft)</p>
+                    </div>
+                </div>
+            </div>
+
+            <section className={styles.details}>
+                <div>
+                    <img src="/christ_the_redeemer_1.jpg" alt="Christ the Redeemer Statue" className={styles.photo} />
+                </div>
+
+                <div className={styles.factsGrid}>
+                    <div className={styles.factsList}>
+                        <h2 className={styles.sectionTitle}>- Interesting Facts -</h2>
+                        <ul>
+                            <li>
+                                <p>The statue is located at the peak of the 700-meter Corcovado Mountain in the Tijuca Forest National Park.</p>
+                            </li>
+                            <li>
+                                <p>It was designed by French sculptor Paul Landowski and built by Brazilian engineer Heitor da Silva Costa.</p>
+                            </li>
+                            <li>
+                                <p>The outer layers are made of thousands of triangular soapstone tiles, which were chosen for their resistance to extreme weather.</p>
+                            </li>
+                            <li>
+                                <p>In 2007, it was voted as one of the New Seven Wonders of the World.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className={styles.mapContainer}>
+                        {/* You might want to update this image source to a map of Brazil/Rio */}
+                        <img src="/brazilMap.jpg" className={styles.mapImage} alt="Map of Brazil" />
+                        <div className={styles.mapLabel}>Mount Corcovado, Brazil</div>
+                    </div>
+                </div>
+            </section>
+        </main>
     );
-  }
+}
