@@ -12,11 +12,11 @@ const images = [
   { src: '/Machu_Picchu_1.jpg', alt: 'Image 7', description: 'Machu Picchu, Peru' },
   { src: '/Colosseo_1.jpg', alt: 'Image 5' , description: 'The Colosseum, Rome'},
   { src: '/christ_the_redeemer_1.jpg', alt: 'Image 9' , description: 'Christ the Redeemer, Brazil'},
-  { src: '/wall_of_china_1.jpg', alt: 'Image 13', description: 'Great Wall of China, Japan' },
+  { src: '/wall_of_china_1.jpg', alt: 'Image 13', description: 'Great Wall of China, China' },  // Fixed country from Japan to China
   { src: '/Machu_Picchu_2.jpg', alt: 'Image 8', description: 'Machu Picchu, Peru' },
   { src: '/taj_mahal_2.jpg', alt: 'Image 12' , description: 'Taj Mahal, India' },
   { src: '/christ_the_redeemer_2.jpg', alt: 'Image 10', description: 'Christ the Redeemer, Brazil' },
-  { src: '/wall_of_china_2.jpg', alt: 'Image 14' , description: 'Great Wall of China, Japan'},
+  { src: '/wall_of_china_2.jpg', alt: 'Image 14' , description: 'Great Wall of China, China'},  // Fixed country
 ];
 
 // Create non-mutating reversed versions for variety across tracks
@@ -27,7 +27,7 @@ const imagesShuffledReversed = [...imagesShuffled].reverse(); // For fourth trac
 export default function Gallery() {
   return (
     // Wrapper div to contain everything and enable positioning
-    <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', width: '100%', overflow: 'hidden', minHeight: '100vh' }}>  {/* Added minHeight for full viewport */}
       {/* Background layer: Contains the four rotating galleries, positioned absolutely to fill the container */}
       <div
         style={{
@@ -39,7 +39,7 @@ export default function Gallery() {
           zIndex: 0, // Low z-index to place it behind the grid
           display: 'flex',
           flexDirection: 'column', // Stack the four tracks vertically
-          opacity: 0.6, // Semi-transparent (adjust 0-1 as needed; applies to all child galleries)
+          opacity: 0.4, // Slightly reduced opacity for subtler background
         }}
       >
         {/* First rotating track - flex: 1 to take 25% height */}
@@ -70,7 +70,7 @@ export default function Gallery() {
           </div>
         </div>
 
-        {/* Third rotating track - Reuse track class or create new in CSS for different speed/direction */}
+        {/* Third rotating track */}
         <div className={gallery.gallerycontainer} style={{ flex: 1 }}>
           <div className={gallery.gallerytrack3}> 
             {[...imagesShuffled, ...imagesShuffled].map((img, index) => (
@@ -104,14 +104,14 @@ export default function Gallery() {
         className={gridgallery.gallerySection}
         style={{
           position: 'relative',
-          zIndex: 10, // Higher than background to appear in front
-          backgroundColor: 'transparent', // Transparent to see rotating backgrounds through gaps
+          zIndex: 10, // Higher than background
+          //backgroundColor: 'transparent', // Transparent to see rotating backgrounds
         }}
       >
         <h2>Visual Gallery</h2>
         <div className={gridgallery.galleryGrid}>
           {images.map((img, index) => (
-            <div key={index} className={`${gridgallery.galleryItem} ${gridgallery.gridItem} ${gridgallery[`item${index + 1}`]}`}>
+            <div key={index} className={`${gridgallery.galleryItem} ${gridgallery[`item${index + 1}`] || ''}`}>
               <img src={img.src} alt={img.alt} />
               <div className={gridgallery.caption}>{img.description}</div>
             </div>

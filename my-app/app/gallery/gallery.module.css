@@ -1,104 +1,101 @@
 .gallerycontainer {
   position: relative;
-  width: 100%; /* Full width of parent */
-  overflow: hidden; /* Hide overflow for clean edges */
+  width: 100%;
+  overflow: hidden;
   background-color: #F5F1E3;
-  opacity: 0.3;
+}
+
+.gallerytrack, .gallerytrack2, .gallerytrack3, .gallerytrack4 {
+  padding-top: 10px;
+  display: grid;
+  grid-template-rows: repeat(1, auto); /* Single row for horizontal scroll */
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(300px, 1fr);
+  gap: 15px; /* Increased gap */
+  animation-timing-function: ease-in-out; /* Smoother animation curve */
 }
 
 .gallerytrack {
-  
-  padding-top:10px;
-  display: grid;
-  grid-template-rows: repeat(1, auto); /* Two rows */
-  grid-auto-flow: column; /* Fill columns automatically */
-  grid-auto-columns: minmax(300px, 1fr); /* Image width: adjust as needed (e.g., 200px min) */
-  gap: 10px; /* Space between images/rows */
-  animation: scroll-left 30s linear infinite; /* Speed: 30s for one full cycle; adjust for faster/slower */
+  animation: scroll-left 40s linear infinite; /* Slower for calmer feel */
 }
 
 .gallerytrack2 {
-  padding-top:10px;
-  display: grid;
-  grid-template-rows: repeat(1, auto); /* Two rows */
-  grid-auto-flow: column; /* Fill columns automatically */
-  grid-auto-columns: minmax(300px, 1fr); /* Image width: adjust as needed (e.g., 200px min) */
-  gap: 10px; /* Space between images/rows */
-  animation: scroll-left 25s linear infinite; /* Speed: 30s for one full cycle; adjust for faster/slower */
+  animation: scroll-right 35s linear infinite; /* Changed to right for variety */
 }
+
 .gallerytrack3 {
-  padding-top:10px;
-  display: grid;
-  grid-template-rows: repeat(1, auto); /* Two rows */
-  grid-auto-flow: column; /* Fill columns automatically */
-  grid-auto-columns: minmax(300px, 1fr); /* Image width: adjust as needed (e.g., 200px min) */
-  gap: 10px; /* Space between images/rows */
-  animation: scroll-left 20s linear infinite; /* Speed: 30s for one full cycle; adjust for faster/slower */
+  animation: scroll-left 30s linear infinite;
 }
+
 .gallerytrack4 {
-  padding-top:10px;
-  display: grid;
-  grid-template-rows: repeat(1, auto); /* Two rows */
-  grid-auto-flow: column; /* Fill columns automatically */
-  grid-auto-columns: minmax(300px, 1fr); /* Image width: adjust as needed (e.g., 200px min) */
-  gap: 10px; /* Space between images/rows */
-  animation: scroll-left 15s linear infinite; /* Speed: 30s for one full cycle; adjust for faster/slower */
+  animation: scroll-right 25s linear infinite; /* Right direction */
 }
+
 .galleryimage {
-  width: 100%; /* Fill grid cell */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Crop to fit */
-  /*border-radius: 8px; /* Optional: rounded corners */
-  transition: opacity 0.5s ease; /* Optional: subtle opacity transition per image */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px; /* Softer corners */
+  transition: opacity 0.5s ease, transform 0.3s ease; /* Added transform */
   max-width: 500px;
   max-height: 700px;
   aspect-ratio: 1.5/1;
+  filter: grayscale(20%); /* Subtle desaturation for background aesthetic */
+}
+
+.galleryimage:hover {
+  filter: grayscale(0%); /* Full color on hover if interactive */
+  transform: scale(1.05);
 }
 
 /* Infinite left scroll animation */
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%); /* Move half-way (since content is duplicated) */
-  }
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Adjusted to -50% since duplicated */
 }
 
-/* Optional: Pause on hover for UX 
-.gallerycontainer:hover .gallerytrack .gallerytrack2 {
+/* New right scroll animation for variety */
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Pause on hover */
+.gallerycontainer:hover .gallerytrack,
+.gallerycontainer:hover .gallerytrack2,
+.gallerycontainer:hover .gallerytrack3,
+.gallerycontainer:hover .gallerytrack4 {
   animation-play-state: paused;
-}*/
+}
 
-/* Media query for mobile responsiveness */
+/* Media query for mobile */
 @media (max-width: 768px) {
-  .gallerytrack {
-    grid-auto-columns: minmax(150px, 1fr); /* Smaller images on mobile */
-    animation-duration: 20s; /* Faster on small screens */
+  .gallerytrack, .gallerytrack2, .gallerytrack3, .gallerytrack4 {
+    grid-auto-columns: minmax(150px, 1fr);
+    animation-duration: 20s; /* Faster on mobile */
   }
 }
 
-.h1{
-  text-align:center;
-  padding-top:10px;
-  padding-bottom:10px;
-  font-size:60px;
-  background-color:#cdcdcd;
-  color:rgb(0, 0, 0);
-  font-family:'Times New Roman', Times, serif;
+.h1 {
+  text-align: center;
+  padding: 15px 0; /* Adjusted padding */
+  font-size: 60px;
+  background-color: #cdcdcd;
+  color: rgb(0, 0, 0);
+  font-family: 'Times New Roman', Times, serif;
 }
 
-.gridcontainer{
-  grid-auto-columns: minmax(300px, 1fr);
+.gridcontainer {
   display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   column-gap: 50px;
 }
+
 .gridimg {
-  width: 100%; /* Fill grid cell */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover; /* Crop to fit */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   max-width: 500px;
   max-height: 700px;
 }

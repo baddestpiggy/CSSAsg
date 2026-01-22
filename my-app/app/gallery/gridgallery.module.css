@@ -1,21 +1,27 @@
 .gallerySection {
-  background-color: #F5F1E3; /* Beige paper-like background */
-  padding: 2rem;
+  background-color: rgba(245, 241, 227, 0.5); /* Slightly transparent beige for better contrast over background */
+  padding: 3rem; /* Increased padding for more breathing room */
   text-align: center;
+  border-radius: 12px; /* Soft rounded corners for the section */
+  margin: 2rem auto; /* Center and add vertical spacing */
+  max-width: 1600px; /* Slightly wider max-width */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .galleryGrid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
+  gap: 15px; /* Increased gap for better spacing */
   max-width: 1400px;
   margin: 0 auto;
 }
 
 .galleryItem {
-  position: relative; /* For absolute positioning of caption */
-  overflow: hidden; /* Hide any overflow from caption */
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Softer radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Deeper shadow for items */
 }
 
 .galleryItem img {
@@ -23,13 +29,12 @@
   height: 100%;
   aspect-ratio: 1/1.5;
   object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease; /* Optional: slight zoom on hover */
+  transition: transform 0.4s ease, filter 0.4s ease; /* Added filter transition for brightness */
 }
 
 .galleryItem:hover img {
-  transform: scale(1.05); /* Optional: zoom effect */
+  transform: scale(1.08); /* Slightly more zoom */
+  filter: brightness(1.1); /* Brighten on hover for vibrancy */
 }
 
 .caption {
@@ -37,31 +42,39 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+  padding: 12px 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); /* Gradient for smoother fade */
   color: white;
-  font-size: 0.9rem;
+  font-size: 1rem; /* Slightly larger font */
   text-align: center;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease; /* Smooth fade */
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease; /* Added transform transition */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transform: translateY(20px); /* Start slightly below */
 }
 
 .galleryItem:hover .caption {
-  opacity: 1; /* Show on hover */
+  opacity: 1;
+  transform: translateY(0); /* Slide up on hover */
 }
 
-/* Your existing custom spans (item1, item2, etc.) remain the same */
+/* Add custom spans for varied grid layout (assuming you want a more dynamic look) */
+.item1 { grid-column: span 2; grid-row: span 1.5; } /* Larger item */
+.item3 { grid-column: span 2; grid-row: span 1.5; }
+.item6 { grid-column: span 2; }
+.item8 { grid-row: span 1; }
+.item11 { grid-column: span 2; grid-row: span 1; }
+/* Adjust or add more as needed for asymmetry */
 
-/* Responsiveness (unchanged) */
+/* Responsiveness */
 @media (max-width: 768px) {
-  .gallery-grid {
+  .galleryGrid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
+    gap: 10px;
   }
 
-  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9, .item10 {
+  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9, .item10, .item11, .item12, .item13, .item14 {
     grid-column: auto;
     grid-row: auto;
   }
