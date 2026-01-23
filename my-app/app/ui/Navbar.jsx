@@ -8,9 +8,9 @@ export default function Navbar() {
             <Link className={styles.navitem} href="/">Home</Link>
             <Link className={styles.navitem} href="/gallery">Gallery</Link>
             
-            <div class={styles.dropdown}>
-                <p class={styles.dropbtn}>Facts</p>
-                <div class={styles.dropdowncontent}>
+            <div className={styles.dropdown}>
+                <p className={styles.dropbtn}>Facts</p>
+                <div className={styles.dropdowncontent}>
                     <Link className={styles.dropdowncontentItem} href="/facts/Christ">Christ the Redeemer</Link>
                     <Link className={styles.dropdowncontentItem} href="/facts/ChichenItza">Chichen Itza</Link>
                     <Link className={styles.dropdowncontentItem} href="/facts/Colosseo">Colosseum</Link>
@@ -22,8 +22,6 @@ export default function Navbar() {
             </div>
             <Link className={styles.navitem} href="/about">About</Link>
             <a className={styles.navitem} href="/42.zip" download="website.zip">Download the Mystery File</a>
-            
-
         </nav>
     )
 }
