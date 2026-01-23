@@ -74,7 +74,7 @@ export default function Taj() {
                     </div>
 
                     <div className={styles.mapContainer}>
-                        <img src="/tajMap.jpg" className={styles.mapImage} alt="Map of China" />
+                        <img src="/tajMap.jpg" className={styles.mapImage} alt="Map of Taj Mahal" />
                         <div className={styles.mapLabel}>Taj Mahal</div>
                     </div>
                 </div>
