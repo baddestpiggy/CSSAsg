@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import styles from "./Navbar.module.css";
-
+import {useState} from "react";
 
 export default function Navbar() {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <nav className={styles.navbar}>
             <Link className={styles.navitem} href="/">Home</Link>
@@ -25,5 +29,5 @@ export default function Navbar() {
             <Link className={styles.navitem} href="/about">About</Link>
             <a className={styles.navitem} href="/42.zip" download="website.zip">Download the Mystery File</a>
         </nav>
-    )
+    );
 }

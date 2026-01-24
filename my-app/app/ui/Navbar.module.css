@@ -1,8 +1,8 @@
 .navbar {
     display: flex;
     background-color: #1F2539;
-    overflow: visible;
-    justify-content: center;
+    overflow: hidden;
+    justify-content:center;
     outline: 1px solid #000000;
     padding-bottom: 2px;
     padding-top: 2px;
