@@ -9,8 +9,8 @@ export default function HomePage() {
   const [visitedWonders, setVisitedWonders] = useState([]);
 
   useEffect(() => {
-    // Load visited wonders from localStorage
-    const stored = localStorage.getItem('visitedWonders');
+    // Load visited wonders from sessionStorage (resets when browser closes)
+    const stored = sessionStorage.getItem('visitedWonders');
     if (stored) {
       setVisitedWonders(JSON.parse(stored));
     }

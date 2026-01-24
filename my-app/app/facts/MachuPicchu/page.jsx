@@ -10,13 +10,13 @@ export default function MachuPicchu() {
     const slug = window.location.pathname.split('/').pop();
     
     // Mark this wonder as visited
-    const stored = localStorage.getItem('visitedWonders');
+    const stored = sessionStorage.getItem('visitedWonders');
     const visitedArray = stored ? JSON.parse(stored) : [];
     
     // Add current wonder's slug if not already visited
     if (!visitedArray.includes(slug)) {
       visitedArray.push(slug);
-      localStorage.setItem('visitedWonders', JSON.stringify(visitedArray));
+      sessionStorage.setItem('visitedWonders', JSON.stringify(visitedArray));
     }
   }, []);
 
