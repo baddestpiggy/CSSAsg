@@ -13,9 +13,9 @@ export default function Navbar() {
             <Link className={styles.navitem} href="/gallery">Gallery</Link>
             
             
-            <div className={styles.dropdown}>
-                <p className={styles.dropbtn}>Facts</p>
-                <div className={styles.dropdowncontent}>
+            <div class={styles.dropdown}>
+                <p class={styles.dropbtn}>Facts</p>
+                <div class={styles.dropdowncontent}>
                     <Link className={styles.dropdowncontentItem} href="/facts/Christ">Christ the Redeemer</Link>
                     <Link className={styles.dropdowncontentItem} href="/facts/ChichenItza">Chichen Itza</Link>
                     <Link className={styles.dropdowncontentItem} href="/facts/Colosseo">Colosseum</Link>

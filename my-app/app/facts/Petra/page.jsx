@@ -1,12 +1,11 @@
 import styles from "./petra.module.css"
 
-
 export default function Petra() {
     return (
         <main className={styles.backgroundContainer}>
 
             <section className={styles.hero}>
-                <h1>Petra, Ancient City of Jordan</h1>
+                <h1>Petra</h1>
             </section>
 
             <div className={styles.factBar}>
@@ -14,7 +13,7 @@ export default function Petra() {
                     <img src="/location.png" alt="Location" className={styles.icon} />
                     <div>
                         <span className={styles.label}>Location:</span>
-                        <p className={styles.value}>Southern Jordan</p>
+                        <p className={styles.value}>Ma'an, Jordan</p>
                     </div>
                 </div>
 
@@ -24,7 +23,7 @@ export default function Petra() {
                     <img src="/calender.png" alt="Built" className={styles.icon} />
                     <div>
                         <span className={styles.label}>Built:</span>
-                        <p className={styles.value}>4th Century BC</p>
+                        <p className={styles.value}>c. 4th Century BC</p>
                     </div>
                 </div>
             
@@ -33,25 +32,25 @@ export default function Petra() {
                 <div className={styles.factItem}>
                     <img src="/material.png" alt="Materials" className={styles.icon} />
                     <div>
-                        <span className={styles.label}>How was it built:</span>
-                        <p className={styles.value}>Carved into cliffs</p>
+                        <span className={styles.label}>Materials:</span>
+                        <p className={styles.value}>Red Sandstone</p>
                     </div>
                 </div>
 
                 <div className={styles.divider}></div>
 
                 <div className={styles.factItem}>
-                    <img src="/length.png" alt="Length" className={styles.icon} />
+                    <img src="/length.png" alt="Type" className={styles.icon} />
                     <div>
-                        <span className={styles.label}>Length:</span>
-                        <p className={styles.value}>Over 264 square km</p>
+                        <span className={styles.label}>Type:</span>
+                        <p className={styles.value}>Rock-cut Architecture</p>
                     </div>
                 </div>
             </div>
 
             <section className={styles.details}>
                 <div>
-                    <img src="/petra_2.jpg" alt="wallPhoto" className={styles.photo} />
+                    <img src="/petra_1.jpg" alt="Al-Khazneh (The Treasury) in Petra" className={styles.photo} />
                 </div>
 
                 <div className={styles.factsGrid}>
@@ -59,27 +58,26 @@ export default function Petra() {
                         <h2 className={styles.sectionTitle}>- Interesting Facts -</h2>
                         <ul>
                             <li>
-                                <p>Despite being in the desert, the Nabataeans (ancient Arab people centered in Jordan) created a complex, advanced water conduit and cistern system to sustain a population of up to 30,000.</p>
+                                <p>Petra is often called the "Rose City" due to the color of the stone from which it is carved.</p>
                             </li>
                             <li>
-                                <p>Over 85% of the city remains undiscovered, hidden underground and is estimated to be four time the size of Manhatten.</p>
+                                <p>It was the capital of the Nabataean Kingdom and a major hub for trade routes between Egypt and Mesopotamia.</p>
                             </li>
                             <li>
-                                <p>Known to local Bedouins (Arabic-speaking nomadic people of the Middle Eastern and North African deserts) for centuries, it was introduced to the Western world in 1812 by Swiss explorer Johann Ludwig Burckhardt, who disguised himself as an Arab scholar to enter.</p>
+                                <p>The most famous structure is Al-Khazneh (The Treasury), which was actually a tomb carved into the sandstone cliff.</p>
                             </li>
                             <li>
-                                <p>Petra gained further worldwide fame as the location of scenes from movies such as Indiana Jones and the Last Crusade, The Mummy Returns and Lawrence of Arabia</p>
+                                <p>The city features an incredibly advanced water conduit system that allowed 30,000 people to live in the desert.</p>
                             </li>
                         </ul>
                     </div>
 
                     <div className={styles.mapContainer}>
-                        <img src="/petraMap.png" className={styles.mapImage} alt="Map of Petra" />
-                        <div className={styles.mapLabel}>The Ancient City of Petra</div>
+                        <img src="/jordanMap.jpg" className={styles.mapImage} alt="Map of Jordan" />
+                        <div className={styles.mapLabel}>Arabah Valley, Jordan</div>
                     </div>
                 </div>
             </section>
         </main>
-        
     );
 }
