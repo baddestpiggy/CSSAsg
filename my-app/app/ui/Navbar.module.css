@@ -1,8 +1,8 @@
 .navbar {
     display: flex;
     background-color: #1F2539;
-    overflow: hidden;
-    justify-content:center;
+    overflow: visible;
+    justify-content: center;
     outline: 1px solid #000000;
     padding-bottom: 2px;
     padding-top: 2px;
@@ -15,7 +15,6 @@
 }
 
 .navitem {
-    float: left;
     display: block;
     color: white;
     text-align: center;
@@ -32,8 +31,6 @@
 }
 
 .dropdown {
-    float: left;
-    overflow: visible;
     position: relative;
 }
 
@@ -57,22 +54,18 @@
 }
 
 .dropdowncontent {
-    display: none;
     position: absolute;
     background-color: #1F2539;
     min-width: 200px;
     box-shadow: 0px 12px 24px 0px rgba(0, 0, 0, 0.4);
     z-index: 1001;
     border-radius: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
     top: 100%;
     left: 0;
     margin-top: 2px;
 }
 
 .dropdowncontentItem {
-    float: none;
     color: rgb(255, 255, 255);
     padding: 12px 16px;
     text-decoration: none;
@@ -85,9 +78,4 @@
     background-color: #2b334f;
     color: #bcd9d8;
     border-radius: 8px;
-}
-
-.dropdown:hover .dropdowncontent {
-    display: block;
-    opacity: 1;
 }
