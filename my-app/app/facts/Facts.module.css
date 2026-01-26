@@ -1,0 +1,8 @@
+.backgroundContainer {
+  background-image: url('/background1.png'); /* Path from public folder */
+  background-size: cover;      /* Scales image to cover the entire screen */
+  background-position: center; /* Centers the image */
+  background-attachment: fixed; /* Optional: Stops image from scrolling */
+  min-height: 100vh;           /* Ensures it covers the full viewport height */
+  width: 100%;
+}
