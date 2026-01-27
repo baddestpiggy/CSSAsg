@@ -1,83 +1,99 @@
 .gallerycontainer {
   position: relative;
-  width: 100%;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f5f1e3 0%, #e8e4d8 100%);
-}
-
-.gallerytrack, .gallerytrack2, .gallerytrack3, .gallerytrack4 {
-  padding: 12px 0;
-  display: grid;
-  grid-template-rows: repeat(1, auto);
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(320px, 1fr);
-  gap: 20px;
-  animation-timing-function: linear;
-  will-change: transform;
+  width: 100%; /* Full width of parent */
+  overflow: hidden; /* Hide overflow for clean edges */
+  background-color: #F5F1E3;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%, /* Fade in from left */
+    black 10%,
+    black 90%,
+    transparent 100% /* Fade out to right */
+  ); /* Fading mask for enter/leave */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  ); /* For Safari/Chrome compatibility */
 }
 
 .gallerytrack {
-  animation: scroll-left 50s linear infinite;
+  padding-top:10px;
+  display: grid;
+  grid-template-rows: repeat(1, auto); /* Two rows */
+  grid-auto-flow: column; /* Fill columns automatically */
+  grid-auto-columns: minmax(300px, 1fr); /* Image width: adjust as needed (e.g., 200px min) */
+  gap: 10px; /* Space between images/rows */
+  animation: scroll-left 30s linear infinite; /* Speed: 30s for one full cycle; adjust for faster/slower */
 }
 
 .gallerytrack2 {
-  animation: scroll-right 45s linear infinite;
-}
-
-.gallerytrack3 {
-  animation: scroll-left 40s linear infinite;
-}
-
-.gallerytrack4 {
-  animation: scroll-right 35s linear infinite;
+  padding-top:10px;
+  display: grid;
+  grid-template-rows: repeat(1, auto); /* Two rows */
+  grid-auto-flow: column; /* Fill columns automatically */
+  grid-auto-columns: minmax(300px, 1fr); /* Image width: adjust as needed (e.g., 200px min) */
+  gap: 10px; /* Space between images/rows */
+  animation: scroll-left 20s linear infinite; /* Speed: 30s for one full cycle; adjust for faster/slower */
 }
 
 .galleryimage {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 16px;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  max-width: 520px;
-  max-height: 720px;
-  aspect-ratio: 3/2;
-  filter: grayscale(30%) brightness(0.85) blur(0.5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Fill grid cell */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crop to fit */
+  /*border-radius: 8px; /* Optional: rounded corners */
+  transition: opacity 0.5s ease; /* Optional: subtle opacity transition per image */
+  max-width: 500px;
+  max-height: 700px;
+  aspect-ratio: 1.5/1;
 }
 
-
-
+/* Infinite left scroll animation */
 @keyframes scroll-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move half-way (since content is duplicated) */
+  }
 }
 
-@keyframes scroll-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
+/* Optional: Pause on hover for UX 
+.gallerycontainer:hover .gallerytrack .gallerytrack2 {
+  animation-play-state: paused;
+}*/
 
-
-
+/* Media query for mobile responsiveness */
 @media (max-width: 768px) {
-  .gallerytrack, .gallerytrack2, .gallerytrack3, .gallerytrack4 {
-    grid-auto-columns: minmax(180px, 1fr);
-    gap: 12px;
-  }
-  
   .gallerytrack {
-    animation-duration: 30s;
+    grid-auto-columns: minmax(150px, 1fr); /* Smaller images on mobile */
+    animation-duration: 20s; /* Faster on small screens */
   }
-  
-  .gallerytrack2 {
-    animation-duration: 28s;
-  }
-  
-  .gallerytrack3 {
-    animation-duration: 25s;
-  }
-  
-  .gallerytrack4 {
-    animation-duration: 22s;
-  }
+}
+
+.h1{
+  text-align:center;
+  padding-top:10px;
+  padding-bottom:10px;
+  font-size:60px;
+  background-color:#cdcdcd;
+  color:rgb(0, 0, 0);
+  font-family:'Times New Roman', Times, serif;
+}
+
+.gridcontainer{
+  grid-auto-columns: minmax(300px, 1fr);
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 50px;
+}
+.gridimg {
+  width: 100%; /* Fill grid cell */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Crop to fit */
+  max-width: 500px;
+  max-height: 700px;
 }
