@@ -138,10 +138,10 @@ export default function HomePage() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.titleBox}>
-            <h1 className={styles.title}>THE SEVEN WONDERS OF DIDDY</h1>
+            <h1 className={styles.title}>THE SEVEN WONDERS OF THE WORLD</h1>
           </div>
           <p className={styles.subtitle}>
-            Discover the remarkable stories behind the Epstien Island
+            Discover the remarkable stories behind the wonders of the world!
           </p>
         </div>
       </div>
