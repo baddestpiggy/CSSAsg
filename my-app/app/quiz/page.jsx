@@ -114,4 +114,168 @@ export default function QuizPage() {
     if (percentage >= 40) return "📚";
     return "💪";
   };
+  return (
+    <div className={styles.container}>
+      <div className={styles.hero}>
+        <div className={styles.heroContent}>
+          <div className={styles.titleBox}>
+            <h1 className={styles.title}>🌍 WONDERS QUIZ 🌍</h1>
+          </div>
+          <p className={styles.subtitle}>
+            Test your knowledge about the Seven Wonders of the World
+          </p>
+        </div>
+      </div>
+
+      <div className={styles.quizContainer}>
+        {!showResult ? (
+          <div className={`${styles.quizCard} ${showFeedback ? styles.shake : ''}`}>
+            <div className={styles.scoreCounter}>
+              <span className={styles.scoreLabel}>Score:</span>
+              <span className={styles.scoreValue}>{score}</span>
+            </div>
+
+            <div className={styles.progressBar}>
+              <div 
+                className={styles.progress}
+                style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
+              ></div>
+            </div>
+            
+            <div className={styles.questionNumber}>
+              Question {currentQuestion + 1} of {questions.length}
+            </div>
+
+            <div className={styles.imageContainer}>
+              <img 
+                src={questions[currentQuestion].image} 
+                alt="Wonder" 
+                className={styles.questionImage}
+              />
+              <div className={styles.imageOverlay}></div>
+            </div>
+
+            <h2 className={styles.question}>
+              {questions[currentQuestion].question}
+            </h2>
+
+            <div className={styles.options}>
+              {questions[currentQuestion].options.map((option, index) => (
+                <button
+                  key={index}
+                  className={`${styles.option} 
+                    ${selectedAnswer === index ? styles.selected : ''} 
+                    ${showFeedback && index === questions[currentQuestion].correct ? styles.correctAnswer : ''}
+                    ${showFeedback && selectedAnswer === index && index !== questions[currentQuestion].correct ? styles.wrongAnswer : ''}
+                  `}
+                  onClick={() => handleAnswerClick(index)}
+                  disabled={showFeedback}
+                >
+                  <span className={styles.optionLetter}>{String.fromCharCode(65 + index)}</span>
+                  <span className={styles.optionText}>{option}</span>
+                  {showFeedback && index === questions[currentQuestion].correct && <span className={styles.checkMark}>✓</span>}
+                  {showFeedback && selectedAnswer === index && index !== questions[currentQuestion].correct && <span className={styles.crossMark}>✗</span>}
+                </button>
+              ))}
+            </div>
+
+            {showFeedback && (
+              <div className={`${styles.feedback} ${isCorrect ? styles.correctFeedback : styles.incorrectFeedback}`}>
+                <div className={styles.feedbackIcon}>{isCorrect ? '🎉' : '😅'}</div>
+                <div className={styles.feedbackText}>
+                  {isCorrect ? 'Awesome! You got it right!' : 'Oops! Not quite right.'}
+                </div>
+                <div className={styles.funFact}>
+                  <strong>Did you know?</strong> {questions[currentQuestion].funFact}
+                </div>
+              </div>
+            )}
+
+            {!showFeedback ? (
+              <button
+                className={styles.submitButton}
+                onClick={handleSubmitAnswer}
+                disabled={selectedAnswer === null}
+              >
+                Submit Answer
+              </button>
+            ) : (
+              <button
+                className={styles.nextButton}
+                onClick={handleNextQuestion}
+              >
+                {currentQuestion + 1 === questions.length ? 'See Results 🎯' : 'Next Question →'}
+              </button>
+            )}
+          </div>
+        ) : (
+          <div className={styles.resultCard}>
+            <div className={styles.confetti}>🎊</div>
+            <div className={styles.resultEmoji}>{getScoreEmoji()}</div>
+            <h2 className={styles.resultTitle}>Quiz Complete!</h2>
+            <div className={styles.scoreCircle}>
+              <div className={styles.scoreText}>
+                <span className={styles.scoreNumber}>{score}</span>
+                <span className={styles.scoreTotal}>/ {questions.length}</span>
+              </div>
+            </div>
+            <p className={styles.scoreMessage}>
+              {score === questions.length && "Perfect Score! You're a true Wonders expert! 🏆"}
+              {score >= questions.length * 0.7 && score < questions.length && "Excellent work! You really know your wonders! 🌟"}
+              {score >= questions.length * 0.5 && score < questions.length * 0.7 && "Good job! Keep exploring! 🗺️"}
+              {score < questions.length * 0.5 && "Keep learning about these amazing wonders! 📖"}
+            </p>
+
+            <div className={styles.statsGrid}>
+              <div className={styles.statBox}>
+                <div className={styles.statNumber}>{score}</div>
+                <div className={styles.statLabel}>Correct</div>
+              </div>
+              <div className={styles.statBox}>
+                <div className={styles.statNumber}>{questions.length - score}</div>
+                <div className={styles.statLabel}>Incorrect</div>
+              </div>
+              <div className={styles.statBox}>
+                <div className={styles.statNumber}>{Math.round((score / questions.length) * 100)}%</div>
+                <div className={styles.statLabel}>Accuracy</div>
+              </div>
+            </div>
+
+            <div className={styles.reviewSection}>
+              <h3 className={styles.reviewTitle}>📋 Review Your Answers</h3>
+              {answeredQuestions.map((item, index) => (
+                <div key={index} className={`${styles.reviewItem} ${item.isCorrect ? styles.correct : styles.incorrect}`}>
+                  <div className={styles.reviewHeader}>
+                    <span className={styles.reviewNumber}>Q{index + 1}</span>
+                    <span className={styles.reviewStatus}>
+                      {item.isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                    </span>
+                  </div>
+                  <div className={styles.reviewQuestion}>
+                    {item.question}
+                  </div>
+                  <div className={styles.reviewAnswer}>
+                    <strong>Your answer:</strong> {questions[index].options[item.selectedAnswer]}
+                    {!item.isCorrect && (
+                      <div className={styles.correctAnswerText}>
+                        <strong>Correct answer:</strong> {questions[index].options[item.correctAnswer]}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button className={styles.restartButton} onClick={resetQuiz}>
+              🔄 Retake Quiz
+            </button>
+          </div>
+        )}
+      </div>
+
+      <footer className={styles.footer}>
+        <p>© 2024 World History Project</p>
+      </footer>
+    </div>
+  );
 }
