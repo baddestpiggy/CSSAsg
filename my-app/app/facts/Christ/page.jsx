@@ -88,8 +88,7 @@ export default function ChristTheRedeemer() {
                     </div>
 
                     <div className={styles.mapContainer}>
-                        {/* You might want to update this image source to a map of Brazil/Rio */}
-                        <img src="/brazilMap.jpg" className={styles.mapImage} alt="Map of Brazil" />
+                        <img src="/ChristMap.png" className={styles.mapImage} alt="Map of Brazil" />
                         <div className={styles.mapLabel}>Mount Corcovado, Brazil</div>
                     </div>
                 </div>

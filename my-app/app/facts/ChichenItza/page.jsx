@@ -74,16 +74,15 @@ export default function ChichenItza() {
           <div className={styles.factsList}>
             <h2 className={styles.sectionTitle}>- Interesting Facts -</h2>
             <ul>
-              <li>Chichen Itza was a major focal point in the Northern Maya Lowlands from the Late Classic through the Terminal Classic and into the early portion of the Postclassic period.</li>
               <li>The name "Chichen Itza" means "At the mouth of the well of the Itza," referring to the nearby cenote (natural sinkhole) that was a significant water source for the city.</li>
               <li>The site features a large pyramid known as El Castillo or the Temple of Kukulcan, which is famous for its astronomical significance and architectural precision.</li>
               <li>During the spring and autumn equinoxes, the setting sun casts a series of triangular shadows on the pyramid's staircase, creating the illusion of a serpent descending the steps.</li>
               <li>Chichen Itza was designated a UNESCO World Heritage Site in 1988 and is one of the New Seven Wonders of the World.</li>
             </ul>
           </div>
-
+``
           <div className={styles.mapContainer}>
-            <img src="/chichen_itza_map.jpg" alt="Chichen Itza Map" className={styles.map} />
+            <img src="/chichenmap-1.jpg" alt="Chichen Itza Map" className={styles.map} />
             <div className={styles.mapCaption}>Map of Chichen Itza</div>
           </div>
         </div>
