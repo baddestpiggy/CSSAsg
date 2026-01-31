@@ -52,8 +52,8 @@ export default function HomePage() {
     {
       slug: "Colosseo",
       images: [
-        "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80",
-        "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=800&q=80",
+        "https://i.pinimg.com/736x/0d/14/04/0d14046dca3ddb8823b3b456f6ed1b42.jpg",
+        "https://illumelation.com/wp-content/uploads/2023/09/Rome2CItaly-Colosseumillumelation-TravelGuide.jpg",
         "https://www.romesightseeing.net/media/zxuhmxih/time-elevator-colosseum.jpg?anchor=center&mode=crop&width=1200&height=800&rnd=132624483859270000"
       ],
       title: "Colosseum",
@@ -69,7 +69,7 @@ export default function HomePage() {
       slug: "ChichenItza",
       images: [
         "https://images.unsplash.com/photo-1518638150340-f706e86654de?w=800&q=80",
-        "https://images.unsplash.com/photo-1569257334859-8f6b3c5b8e68?w=800&q=80",
+        "https://www.chichenitza.com/public/assets/img/luxury-tour/luxury-chichen-itza-tour-5.jpg",
         "https://www.thepkpway.com/wp-content/uploads/2016/07/chichen-itza-playa-del-carmen-cancun-mexico-3a.jpg"
       ],
       title: "Chichén Itzá",
@@ -138,10 +138,10 @@ export default function HomePage() {
       <div className={styles.hero}>
         <div className={styles.heroContent}>
           <div className={styles.titleBox}>
-            <h1 className={styles.title}>THE SEVEN WONDERS OF DIDDY</h1>
+            <h1 className={styles.title}>THE SEVEN WONDERS OF THE WORLD</h1>
           </div>
           <p className={styles.subtitle}>
-            Discover the remarkable stories behind the Epstien Island
+            Discover the remarkable stories behind the New Seven Wonders of the World!
           </p>
         </div>
       </div>

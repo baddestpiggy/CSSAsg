@@ -1,5 +1,6 @@
+"use client";
 import styles from "./christ.module.css"
-
+import React, { useEffect } from 'react';
 export default function ChristTheRedeemer() {
   useEffect(() => {
     // Get the slug from the current path

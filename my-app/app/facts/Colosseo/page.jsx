@@ -1,5 +1,6 @@
+"use client";
 import styles from "./cheeks.module.css"
-
+import React, { useEffect } from 'react';
 export default function Colosseum() {
     return (
         <main className={styles.backgroundContainer}>
