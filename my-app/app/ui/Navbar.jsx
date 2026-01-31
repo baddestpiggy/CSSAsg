@@ -21,7 +21,7 @@ export default function Navbar() {
                     <Link className={styles.dropdowncontentItem} href="/facts/Wall">Wall</Link>
                 </div>
             </div>
-            <Link className={styles.navitem} href="/Quiz">Quiz</Link>
+            <Link className={styles.navitem} href="/quiz">Quiz</Link>
             <Link className={styles.navitem} href="/about">About</Link>
         </nav>
     )
