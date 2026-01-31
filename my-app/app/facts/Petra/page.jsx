@@ -1,24 +1,6 @@
-"use client";
+import styles from "./petra.module.css"
 
-import React, { useEffect } from 'react';
-import styles from "./petra.module.css";
-
-export default function MachuPicchu() {
-  useEffect(() => {
-    // Get the slug from the current path
-    const slug = window.location.pathname.split('/').pop();
-    
-    // Mark this wonder as visited
-    const stored = sessionStorage.getItem('visitedWonders');
-    const visitedArray = stored ? JSON.parse(stored) : [];
-    
-    // Add current wonder's slug if not already visited
-    if (!visitedArray.includes(slug)) {
-      visitedArray.push(slug);
-      sessionStorage.setItem('visitedWonders', JSON.stringify(visitedArray));
-    }
-  }, []);
-
+export default function Petra() {
     return (
         <main className={styles.backgroundContainer}>
 
