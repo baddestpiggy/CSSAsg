@@ -23,6 +23,7 @@ const imagesReversed = [...images].reverse();
 const imagesShuffled = [...images].sort(() => Math.random() - 0.5);
 const imagesShuffledReversed = [...imagesShuffled].reverse();
 
+
 export default function Gallery() {
   return (
     <div style={{ 
