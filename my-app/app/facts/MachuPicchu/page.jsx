@@ -85,7 +85,7 @@ export default function MachuPicchu() {
                     </div>
 
                     <div className={styles.mapContainer}>
-                        <img src="/peruMap.jpg" className={styles.mapImage} alt="Map of Peru" />
+                        <img src="/machupicchu.jpg" className={styles.mapImage} alt="Map of Peru" />
                         <div className={styles.mapLabel}>Andes Mountains, Peru</div>
                     </div>
                 </div>

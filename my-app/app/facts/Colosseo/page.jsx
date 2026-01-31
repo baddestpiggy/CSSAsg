@@ -74,7 +74,7 @@ export default function Colosseum() {
                     </div>
 
                     <div className={styles.mapContainer}>
-                        <img src="/italyMap.jpg" className={styles.mapImage} alt="Map of Italy" />
+                        <img src="/colosseummap.gif" className={styles.mapImage} alt="Map of Italy" />
                         <div className={styles.mapLabel}>Rome, Italy</div>
                     </div>
                 </div>
