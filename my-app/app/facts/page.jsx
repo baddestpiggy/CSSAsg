@@ -1,10 +1,7 @@
-import styles from "./Facts.module.css"
-
-export default function Facts() 
+export default function App() 
 {
+
   return (
-    <main className={styles.backgroundContainer}>
-      <h1>Naggers</h1>
-    </main>
-    );
+    <h1>higggii</h1>
+    )
 }
