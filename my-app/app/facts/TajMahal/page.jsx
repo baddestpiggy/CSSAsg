@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import styles from "./touchme.module.css";
+import styles from "./taj.module.css";
 
 export default function TajMahal() {
   useEffect(() => {
@@ -85,7 +85,7 @@ export default function TajMahal() {
                     </div>
 
                     <div className={styles.mapContainer}>
-                        <img src="/indiaMap.jpg" className={styles.mapImage} alt="Map of India" />
+                        <img src="/tajMap.jpg" className={styles.mapImage} alt="Map of India" />
                         <div className={styles.mapLabel}>Uttar Pradesh, India</div>
                     </div>
                 </div>
