@@ -1,7 +1,18 @@
-import styles from "./wall.module.css"
+"use client";
 
+import React, { useEffect } from 'react';
+import styles from "./wall.module.css";
 
 export default function China() {
+  useEffect(() => {
+    const slug = window.location.pathname.split('/').pop();
+    const stored = sessionStorage.getItem('visitedWonders');
+    const visitedArray = stored ? JSON.parse(stored) : [];
+    if (!visitedArray.includes(slug)) {
+      visitedArray.push(slug);
+      sessionStorage.setItem('visitedWonders', JSON.stringify(visitedArray));
+    }
+  }, []);
     return (
         <main className={styles.backgroundContainer}>
 
