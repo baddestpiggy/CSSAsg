@@ -85,7 +85,7 @@ export default function Petra() {
                     </div>
 
                     <div className={styles.mapContainer}>
-                        <img src="/jordanMap.jpg" className={styles.mapImage} alt="Map of Jordan" />
+                        <img src="/petraLocation.png" className={styles.mapImage} alt="Map of Jordan" />
                         <div className={styles.mapLabel}>Arabah Valley, Jordan</div>
                     </div>
                 </div>

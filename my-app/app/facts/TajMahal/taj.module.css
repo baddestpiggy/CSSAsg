@@ -6,7 +6,7 @@
 
 .hero h1
 {
-    background: linear-gradient(to bottom, #e8dcc8, #f5f1e8); /* Warm cream gradient */
+    background: linear-gradient(to bottom, #e8dcc8, #f5f1e8);
     text-align: center;
     margin-top: 0;
     padding-top: 20px;
@@ -17,7 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent cream */
+    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-top: 1px solid #d4c4a8;
     border-bottom: 1px solid #d4c4a8;
@@ -34,7 +34,7 @@
 
 .icon 
 {
-    width: 24px;  /* Adjust size to match your image */
+    width: 24px;
     height: auto;
 }
 
@@ -43,7 +43,7 @@
     display: block;
     font-weight: bold;
     font-size: 0.9rem;
-    color: #4a3728; /* Dark brown text */
+    color: #4a3728;
 }
 
 .value 
