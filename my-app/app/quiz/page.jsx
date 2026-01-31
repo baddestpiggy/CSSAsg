@@ -225,9 +225,6 @@ export default function QuizPage() {
               {score >= questions.length * 0.5 && score < questions.length * 0.7 && "Good job! Keep exploring! 🗺️"}
               {score < questions.length * 0.5 && "Keep learning about these amazing wonders! 📖"}
             </p>
-<<<<<<< HEAD
-        
-=======
 
             <div className={styles.statsGrid}>
               <div className={styles.statBox}>
@@ -282,4 +279,4 @@ export default function QuizPage() {
     </div>
   );
 }
->>>>>>> d1dd566d16b51730cbb77f52ea68a72778a89858
+        
