@@ -24,7 +24,7 @@ export default function QuizPage() {
       question: "What is Petra also known as?",
       options: ["The Lost City", "The Rose City", "The Stone City", "The Ancient City"],
       correct: 1,
-      image: "https://images.unsplash.com/photo-1579606032821-4e6d715c3c35?w=600&q=80",
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Al_Deir_Petra.JPG",
       funFact: "Petra gets its nickname from the rose-red color of its sandstone!"
     },
     {
