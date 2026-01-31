@@ -22,7 +22,7 @@ export default function Navbar() {
                 </div>
             </div>
             <Link className={styles.navitem} href="/quiz">Quiz</Link>
-            <Link className={styles.navitem} href="/about">About</Link>
+            
         </nav>
     )
 }

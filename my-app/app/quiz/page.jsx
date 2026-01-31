@@ -24,7 +24,7 @@ export default function QuizPage() {
       question: "What is Petra also known as?",
       options: ["The Lost City", "The Rose City", "The Stone City", "The Ancient City"],
       correct: 1,
-      image: "https://images.unsplash.com/photo-1579606032821-4e6d715c3c35?w=600&q=80",
+      image: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Al_Deir_Petra.JPG",
       funFact: "Petra gets its nickname from the rose-red color of its sandstone!"
     },
     {
@@ -225,4 +225,61 @@ export default function QuizPage() {
               {score >= questions.length * 0.5 && score < questions.length * 0.7 && "Good job! Keep exploring! 🗺️"}
               {score < questions.length * 0.5 && "Keep learning about these amazing wonders! 📖"}
             </p>
+<<<<<<< HEAD
         
+=======
+
+            <div className={styles.statsGrid}>
+              <div className={styles.statBox}>
+                <div className={styles.statNumber}>{score}</div>
+                <div className={styles.statLabel}>Correct</div>
+              </div>
+              <div className={styles.statBox}>
+                <div className={styles.statNumber}>{questions.length - score}</div>
+                <div className={styles.statLabel}>Incorrect</div>
+              </div>
+              <div className={styles.statBox}>
+                <div className={styles.statNumber}>{Math.round((score / questions.length) * 100)}%</div>
+                <div className={styles.statLabel}>Accuracy</div>
+              </div>
+            </div>
+
+            <div className={styles.reviewSection}>
+              <h3 className={styles.reviewTitle}>📋 Review Your Answers</h3>
+              {answeredQuestions.map((item, index) => (
+                <div key={index} className={`${styles.reviewItem} ${item.isCorrect ? styles.correct : styles.incorrect}`}>
+                  <div className={styles.reviewHeader}>
+                    <span className={styles.reviewNumber}>Q{index + 1}</span>
+                    <span className={styles.reviewStatus}>
+                      {item.isCorrect ? '✓ Correct' : '✗ Incorrect'}
+                    </span>
+                  </div>
+                  <div className={styles.reviewQuestion}>
+                    {item.question}
+                  </div>
+                  <div className={styles.reviewAnswer}>
+                    <strong>Your answer:</strong> {questions[index].options[item.selectedAnswer]}
+                    {!item.isCorrect && (
+                      <div className={styles.correctAnswerText}>
+                        <strong>Correct answer:</strong> {questions[index].options[item.correctAnswer]}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button className={styles.restartButton} onClick={resetQuiz}>
+              🔄 Retake Quiz
+            </button>
+          </div>
+        )}
+      </div>
+
+      <footer className={styles.footer}>
+        <p>© 2024 World History Project</p>
+      </footer>
+    </div>
+  );
+}
+>>>>>>> d1dd566d16b51730cbb77f52ea68a72778a89858
