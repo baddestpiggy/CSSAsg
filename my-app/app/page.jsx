@@ -117,7 +117,7 @@ export default function HomePage() {
       slug: "Christ",
       images: [
         "https://images.unsplash.com/photo-1548963670-aaaa8f73a5e3?w=800&q=80",
-        "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?w=800&q=80",
+        "https://destinationlesstravel.com/wp-content/uploads/2022/10/Christ-the-Redeemer-statue-Rio-de-Janeiro-Brazil.jpg",
         "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/e4/12/c9/visao-privilegiada.jpg?w=600&h=400&s=1"
       ],
       title: "Christ the Redeemer",
