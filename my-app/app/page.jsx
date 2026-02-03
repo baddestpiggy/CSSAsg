@@ -9,12 +9,12 @@ export default function HomePage() {
   const [visitedWonders, setVisitedWonders] = useState([]);
 
   useEffect(() => {
-    // Load visited wonders from localStorage
-    const stored = localStorage.getItem('visitedWonders');
-    if (stored) {
-      setVisitedWonders(JSON.parse(stored));
-    }
-  }, []);
+  // Load visited wonders from sessionStorage
+  const stored = sessionStorage.getItem('visitedWonders');
+  if (stored) {
+    setVisitedWonders(JSON.parse(stored));
+  }
+}, []);
 
   const facts = [
     {
