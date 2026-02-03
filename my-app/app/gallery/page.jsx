@@ -17,6 +17,7 @@ const images = [
   { src: '/taj_mahal_2.jpg', alt: 'Image 12', description: 'Taj Mahal, India' },
   { src: '/christ_the_redeemer_2.jpg', alt: 'Image 10', description: 'Christ the Redeemer, Brazil' },
   { src: '/wall_of_china_2.jpg', alt: 'Image 14', description: 'Great Wall of China, China'},
+  { src: '/Mountcss.jpg', alt: 'Image 15', description: 'Mount rushmore, USA' },
 ];
 
 const imagesReversed = [...images].reverse();

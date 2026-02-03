@@ -18,7 +18,7 @@ export default function Navbar() {
                     <Link className={styles.dropdowncontentItem} href="/facts/MachuPicchu">Machu Picchu</Link>
                     <Link className={styles.dropdowncontentItem} href="/facts/Petra">Petra</Link>
                     <Link className={styles.dropdowncontentItem} href="/facts/TajMahal">Taj Mahal</Link>
-                    <Link className={styles.dropdowncontentItem} href="/facts/Wall">Wall</Link>
+                    <Link className={styles.dropdowncontentItem} href="/facts/Wall">Great Wall</Link>
                 </div>
             </div>
             <Link className={styles.navitem} href="/quiz">Quiz</Link>
